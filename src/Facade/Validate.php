@@ -88,6 +88,6 @@ class Validate extends Facade
      */
     protected static function getFacadeClass()
     {
-        return '\Think\Component\Validate\Validate';
+        return 'Think\Component\Validate\Validate';
     }
 }

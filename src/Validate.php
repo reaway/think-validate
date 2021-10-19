@@ -19,7 +19,6 @@ use Think\Component\Validate\ValidateRule;
 
 /**
  * 数据验证类
- * @package think
  */
 class Validate
 {
