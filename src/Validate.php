@@ -1470,7 +1470,7 @@ class Validate
     protected function parseErrorMsg(string $msg, $rule, string $title, $value)
     {
         if (is_array($msg)) {
-            return $this->errorMsgIsArray($msg, $rule, $title);
+            return $this->errorMsgIsArray($msg, $rule, $title, $value);
         }
 
         // rule若是数组则转为字符串
@@ -1506,13 +1506,14 @@ class Validate
      * @param array $msg 错误信息
      * @param mixed $rule 验证规则数据
      * @param string $title 字段描述名
+     * @param mixed $value 字段值
      * @return array
      */
-    protected function errorMsgIsArray(array $msg, $rule, string $title)
+    protected function errorMsgIsArray(array $msg, $rule, string $title, $value)
     {
         foreach ($msg as $key => $val) {
             if (is_string($val)) {
-                $msg[$key] = $this->parseErrorMsg($val, $rule, $title);
+                $msg[$key] = $this->parseErrorMsg($val, $rule, $title, $value);
             }
         }
         return $msg;
