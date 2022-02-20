@@ -34,7 +34,7 @@ if (!function_exists('validate')) {
                 [$validate, $scene] = explode('.', $validate);
             }
 
-            $class = false !== strpos($validate, '\\') ? $validate : app()->parseClass('validate', $validate);
+            $class = false !== strpos($validate, '\\') ? $validate : container()->parseClass('validate', $validate);
 
             $v = new $class();
 
